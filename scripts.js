@@ -1,5 +1,5 @@
 //test changes
-var askAge = prompt("What is your age?");
+var askAge = parseInt(prompt("What is your age?"));
 
 //variables to count time 
 var secondsPerMinute = 60;
@@ -10,4 +10,4 @@ var weeksPerYear = 52;
 
 var agePerSecond = askAge * secondsPerMinute * minutesPerHour * hoursPerDay * daysPerWeek * weeksPerYear;
 
-document.write("<h1>" + agePerSecond + "seconds alive!!! </h1>");
+document.write("<h1>WOAH! " + agePerSecond + " seconds alive!!! </h1>");
