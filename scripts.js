@@ -48,3 +48,10 @@ function greetings (name){
 }
 
 greetings("doggie");
+
+//scope
+//function and variables 
+//function Scope - variables within the function, can only be access in that variable
+//a var inside the function. 
+
+//global scope 
