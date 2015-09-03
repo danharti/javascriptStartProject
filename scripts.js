@@ -21,22 +21,30 @@ alert(randomNumber());
 document.write(randomNumber());
 var randomNumero10 = randomNumber();
 
-
-
-
-
+//Example of two possible return values - but in the end it just returns one.
 //To test if email field has content
 
-// function isEmailFieldEmpty() {
-// 	var field = document.getElementById('email');
-// 	if (field.value === ''){
-// 		return true;
-// 	} else {
-// 		return false;
-// 	}
-// }
+function isEmailFieldEmpty() {
+	var field = document.getElementById('email');
+	if (field.value === ''){
+		return true;
+	} else {
+		return false;
+	}
+}
 
-// var fieldTest = isEmailFieldEmpty();
-// if (fieldTest === true) {
-// 	alert("Please provide your email. Thanks.");
-// }
+var fieldTest = isEmailFieldEmpty();
+if (fieldTest === true) {
+	alert("Please provide your email. Thanks.");
+}
+
+//passing values to a parameter
+//parameters and arguments
+//parameter is like variable except it's inside the function
+//argument is the value being pass to the parameter
+
+function greetings (name){
+	return name;
+}
+
+greetings("doggie");
