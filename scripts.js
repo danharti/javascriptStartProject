@@ -1,12 +1,21 @@
 var correctGuess = false;
 //this was set to false since the person hasn't guess any number yet
 
-var lowerNumber = parseInt(prompt ("What is your lower number?"));
-var upperNumber = parseInt(prompt ("What is your upper number?"));
+var lowerNumber;
+var upperNumber;
+var yourGuess;
 
-var yourGuess = parseInt (prompt ("Guess which number i'm giving from " + lowerNumber + " up to " + upperNumber + "?"));
+
+	lowerNumber = parseInt(prompt ("What is your lower number?"));
+	upperNumber = parseInt(prompt ("What is your upper number?"));
+
+	yourGuess = parseInt(prompt ("Guess which number i'm giving from " + lowerNumber + " up to " + upperNumber + "?"));
+
 
 function randomNumberGenerator(upper,lower){
+	if (isNaN(upper) || isNaN(lower)){
+		// throw new Error("Both numbers should be a number.");
+	}
 	var randomNumber = Math.floor ( Math.random() * (upper - lower) ) + lower;
 	return randomNumber;
 }
