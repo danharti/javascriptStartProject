@@ -1,6 +1,6 @@
 var question1 = "What is the greenbox in my room?";
-var question2 = "What is the greenbox in my room?";
-var question3 = "What is the greenbox in my room?";
+var question2 = "Why is the water dripping in my room?";
+var question3 = "What is at the end of the rainbow?";
 var question4 = "What is the greenbox in my room?";
 var question5 = "What is the greenbox in my room?";
 
@@ -11,8 +11,8 @@ var answer4 = prompt(question4);
 var answer5 = prompt(question5);
 
 var correctAnswer1 = "creeper";
-var correctAnswer2 = "creeper";
-var correctAnswer3 = "creeper";
+var correctAnswer2 = "cause it's raining";
+var correctAnswer3 = "w";
 var correctAnswer4 = "creeper";
 var correctAnswer5 = "creeper";
 
