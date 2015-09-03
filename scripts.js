@@ -1,19 +1,30 @@
 var correctGuess = false;
 //this was set to false since the person hasn't guess any number yet
 
-var yourGuess = parseInt (prompt ("I'm thinking of a number from 0-10. What is your guess?"));
-var randomNumber = Math.floor ( Math.random() * 10 ) + 1;
+var lowerNumber = parseInt(prompt ("What is your lower number?"));
+var upperNumber = parseInt(prompt ("What is your upper number?"));
 
-if (yourGuess === randomNumber){
+var yourGuess = parseInt (prompt ("Guess which number i'm giving from " + lowerNumber + " up to " + upperNumber + "?"));
+
+function randomNumberGenerator(upper,lower){
+	var randomNumber = Math.floor ( Math.random() * (upper - lower) ) + lower;
+	return randomNumber;
+}
+
+var theRandomNumber = randomNumberGenerator(upperNumber,lowerNumber);
+
+document.write(theRandomNumber);
+
+if (yourGuess === theRandomNumber){
 	correctGuess = true;
-} else if (yourGuess < randomNumber){
-	var yourGuess = parseInt(prompt("Guess More!?"));
-	if (guessMore === randomNumber){
+} else if (yourGuess < theRandomNumber){
+	var guessMore = parseInt(prompt("Guess More!?"));
+	if (guessMore === theRandomNumber){
 		correctGuess = true;
 	} 
-} else if (yourGuess > randomNumber){
+} else if (yourGuess > theRandomNumber){
 	var guessLess = parseInt(prompt("Guess Less!!!"));
-	if (guessLess === randomNumber){
+	if (guessLess === theRandomNumber){
 		correctGuess = true;
 	}
 }
@@ -21,7 +32,7 @@ if (yourGuess === randomNumber){
 if (correctGuess){
 	document.write("<h2>You got it right! Nice Guess</h2>");
 } else {
-	document.write("<h2>Try again. The lucky number is " + randomNumber + ". </h2>");
+	document.write("<h2>Try again. The lucky number is " + theRandomNumber + ". </h2>");
 }
 
 
