@@ -1,41 +1,29 @@
-// function randomNumber(upper){
-// 	//random number starting from 1
-// 	return Math.floor(Math.random() * upper) + 1;
-// }
+var randomNumber = randomNumber(10);
+var guess;
+var guessCount = 0;
+var correctGuess = false;
+//FLAG - a variable that holds a true or false value
 
-// //i want to run the randomNumber 10 times
-
-// var counter = 1;
-// var numberOfRandomNumber = 8;
-// var numberOfTimes = 10;
-
-// //test condition inside the while loop
-// //while loop repeats a block of JS code until a particular condition is no longer true
-// while ( counter <= numberOfTimes){
-// 	var randomNumero = randomNumber(numberOfRandomNumber);
-// 	document.write (randomNumero + " ");
-// 	counter += 1;
-// }
-
-
-//give a random number from 1 to 10000
-//computer guesses the number
-//if does get it show number of times the guess is and the random number
-function randomNumberForGuessing(number){
+function randomNumber(upper){
 	//random number starting from 1
-	return Math.floor(Math.random() * number) + 1;
+	return Math.floor(Math.random() * upper) + 1;
 }
 
-var theSecretNumber = randomNumberForGuessing(75);
-var counterComputer = 0;
-var computerGuess;
-var message = " ";
+// do {
+// 	guess = parseInt(prompt("What is your guess?"));
+// 	guessCount += 1;
+// } while (guess != randomNumber)
 
-while (computerGuess !== theSecretNumber){
-	computerGuess = randomNumberForGuessing(75);
-	message = document.write(computerGuess + "<br><br>");
-	counterComputer += 1;
-}
+do {
+	guess = parseInt(prompt("What is your guess?"));
+	guessCount += 1;
+	if (guess === randomNumber){
+		correctGuess = true;
+	}
+} while (!correctGuess)
 
-document.write ("<h1>" + theSecretNumber + " attempts: " + counterComputer + "</h1>");
+//if true do while loop... if false it stops
+
+document.write (randomNumber + " is the randomNumber. You have guessed it " + guessCount + " times.")
+
 
