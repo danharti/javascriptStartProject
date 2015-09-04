@@ -1,7 +1,4 @@
-//question and answer in an array
-//ask user for the prompt
-//correct answer will be shown in a list, separate the wrong answer
-//total number of correct answers
+//using the push method
 
 var quizData = [
   ["What is the pig's name?", "Piggy"],
@@ -9,17 +6,27 @@ var quizData = [
   ["What is my favorite color?", "Green"],
   ["What am I thinking now?", "Nothing"]
 ];
+
 var question;
 var answer;
 var response;
 var counterCorrect = 0;
 var counterIncorrect = 0;
-var correctAnswer ='';
-var incorrectAnswer = '';
+var correctAnswer = [ ];
+var incorrectAnswer = [ ];
 var html = '';
 
 function print(message){
   document.write(message);
+}
+
+function olList(array){
+	var listHTML = '<ol>';
+		for (var i = 0; i < array.length; i += 1){
+			listHTML += '<li>' + array[i] + '</li>';
+		}
+		listHTML += '</ol>';
+		return listHTML;
 }
 
 for (var i = 0; i < quizData.length; i +=1){
@@ -29,20 +36,20 @@ for (var i = 0; i < quizData.length; i +=1){
   response = prompt(question);
   if (response === answer){
     counterCorrect += 1;
-    correctAnswer += '<li>' + response + '</li>';
+    correctAnswer.push(response);
     // print(counterCorrect + answers);
   } else {
     counterIncorrect += 1;
-    incorrectAnswer += '<li>' + response + '</li>';
+   	incorrectAnswer.push(response);
   }
 }
 
 html += 'Correct Answers: ' + counterCorrect + "<br>";
 html += 'Incorrect Answers: ' + counterIncorrect + "<br>";
 html += '<br> Your correct answers are: <br>';
-html += '<ol>' + correctAnswer + '</ol>';
+html += olList(correctAnswer);
 html += '<br> Your incorrect answers are: <br>';
-html += '<ol>' + incorrectAnswer + '</ol>';
+html += olList(incorrectAnswer);
 
 print(html);
 
